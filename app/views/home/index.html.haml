@@ -1,2 +1,19 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%h1 Feeds
+-#name: string, summary: text, url: string, published_at: datetime, guid: string, created_at: datetime, updated_at: datetime
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Summary
+      %th Url
+      %th Published at
+      %th guid
+
+  - @feed_entries.each do |feed|
+    %body
+      %tr
+        %th= feed.name
+        %th= feed.summary
+        %th= truncate(feed.url)
+        %th= l feed.published_at, :format => :long
+        %th= truncate(feed.guid)
