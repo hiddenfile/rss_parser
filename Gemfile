@@ -18,3 +18,4 @@ gem "email_spec", ">= 1.4.0", :group => :test
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.1.1.0"
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
+gem "feedzirra"
