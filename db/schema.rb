@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122171443) do
+ActiveRecord::Schema.define(:version => 20121123124013) do
 
   create_table "feed_entries", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(:version => 20121122171443) do
     t.string   "url"
     t.datetime "published_at"
     t.string   "guid"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.text     "custom_fields"
   end
 
 end

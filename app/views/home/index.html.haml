@@ -1,5 +1,11 @@
-%h1 Feeds
-%table.table.table-hover{:style => "Font-size: 10px"}
+%form.form-inline{:action => home_parser_path, :method => :post}
+  %input{:name => "utf8", :type => "hidden", :value => "✓"}
+  %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}/
+  %input{:name => "url", :placeholder => "Put url here", :style => "width:875px"}
+  %button.btn{:type => "submit"} Submit
+
+%h1 Feeds last 10 records
+%table.table.table-hover{:style => "font-size: 10px"}
   %thead
     %tr
       %th Name
@@ -7,12 +13,22 @@
       %th Url
       %th Published at
       %th guid
+      %th CustomFields
 
   - @feed_entries.each do |feed|
     %body
       %tr
-        %th= feed.name
-        %th= feed.summary
-        %th= truncate(feed.url)
-        %th= feed.published_at
-        %th= truncate(feed.guid)
+        %td= feed.name
+        %td= raw feed.summary
+        %td= truncate(feed.url)
+        %td= feed.published_at
+        %td= truncate(feed.guid)
+        %td
+          - if fields = feed.custom_fields
+            - fields.each do |k, v|
+              %p
+                %strong
+                  = k
+                %br
+                  = v
+

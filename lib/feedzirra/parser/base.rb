@@ -9,6 +9,7 @@ module Feedzirra
           Feedzirra::Feed.add_feed_class Feedzirra::Parser::TytAtom
           feed = Feedzirra::Feed.fetch_and_parse(feed_url)
           FeedEntry.add_entries(feed.entries)
+          nil
         end
 
       end
