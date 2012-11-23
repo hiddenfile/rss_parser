@@ -7,5 +7,6 @@ FactoryGirl.define do
     url "MyString"
     published_at "2012-11-22 19:14:43"
     guid "MyString"
+    custom_fields ({:a => :b})
   end
 end
