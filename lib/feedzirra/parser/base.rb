@@ -7,9 +7,9 @@ module Feedzirra
         def update_from_feed(feed_url)
           Feedzirra::Feed.add_feed_class Feedzirra::Parser::ItunesPhotosRss
           Feedzirra::Feed.add_feed_class Feedzirra::Parser::TytAtom
-          feed = Feedzirra::Feed.fetch_and_parse(feed_url)
-          FeedEntry.add_entries(feed.entries)
-          nil
+          if feed = Feedzirra::Feed.fetch_and_parse(feed_url)
+            FeedEntry.add_entries(feed.entries)
+          end
         end
 
       end
