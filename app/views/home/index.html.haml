@@ -1,6 +1,5 @@
 %h1 Feeds
--#name: string, summary: text, url: string, published_at: datetime, guid: string, created_at: datetime, updated_at: datetime
-%table.table.table-hover
+%table.table.table-hover{:style => "Font-size: 10px"}
   %thead
     %tr
       %th Name
@@ -15,5 +14,5 @@
         %th= feed.name
         %th= feed.summary
         %th= truncate(feed.url)
-        %th= l feed.published_at, :format => :long
+        %th= feed.published_at
         %th= truncate(feed.guid)
