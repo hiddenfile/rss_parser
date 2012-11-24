@@ -25,7 +25,7 @@ module Feedzirra
       elements :item, :as => :entries, :class => Feedzirra::Parser::TytItemAtom
 
       def self.able_to_parse?(xml)
-        /xmlns:media="http:\/\/search.yahoo.com\/mrss\/"/i =~ xml
+        (/<link>http:\/\/news.tut.by\/<\/link>/i =~ xml)
       end
     end
   end
