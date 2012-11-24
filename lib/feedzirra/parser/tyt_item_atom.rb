@@ -8,6 +8,7 @@ module Feedzirra
       element :title
       element :description, :as => :summary
       element :guid, :with => {:isPermaLink => true}, :as => :url
+      element :"pubDate", :as => :published
 
 
       #   <atom:author>
